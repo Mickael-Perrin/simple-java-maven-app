@@ -18,5 +18,10 @@ pipeline {
         junit(testResults: 'arget/surefire-reports/*.xml', allowEmptyResults: true, healthScaleFactor: 2)
       }
     }
+    stage('Inform'){
+      steps {
+        emailext body: 'essai', subject: 'test', to: 'jojo@titi'
+      }
+    }
   }
 }
